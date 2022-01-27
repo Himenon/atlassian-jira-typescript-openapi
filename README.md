@@ -8,8 +8,7 @@ yarn add -D @himenon/atlassian-jira-typescript-openapi
 
 ```ts
 import * as fs from "fs";
-import * as yaml from "js-yaml"; // yarn add js-yaml @types/js-yaml
-import type { Schemas } from "@himenon/atlassian-jira-typescript-openapi/v1.22.3";
+import type { Schemas, Client } from "@himenon/atlassian-jira-typescript-openapi/v3";
 ```
 
 ## Build
