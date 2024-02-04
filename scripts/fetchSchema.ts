@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
 import fetch from "node-fetch";
-import * as Shell from "./tools/shell";
-import rimraf from "rimraf";
+import { execa } from "execa";
+import { rimraf } from "rimraf";
 import { versions, outputDir } from "./config";
 
 export const getSwaggerSchema = async (version: string): Promise<any> => {
@@ -16,7 +16,10 @@ export const getSwaggerSchema = async (version: string): Promise<any> => {
 };
 
 const convert = async (inputFilename: string, outputFilename: string): Promise<void> => {
-  await Shell.shell(`swagger2openapi ${inputFilename} -o ${outputFilename}`);
+  await execa(`swagger2openapi ${inputFilename} -o ${outputFilename}`, {
+    stdio: ["pipe", "pipe", "inherit"],
+    shell: true,
+  });
 };
 
 const main = async () => {
@@ -28,7 +31,9 @@ const main = async () => {
     const result = await getSwaggerSchema(version);
     const swaggerFilename = path.join(tempDir, `swagger-${version}.json`);
     const openapiFilename = path.join(outputDir, `openapi-${version}.json`);
-    fs.writeFileSync(swaggerFilename, JSON.stringify(result, null, 2), { encoding: "utf-8" });
+    fs.writeFileSync(swaggerFilename, JSON.stringify(result, null, 2), {
+      encoding: "utf-8",
+    });
     await convert(swaggerFilename, openapiFilename);
   });
   await Promise.all(tasks);
