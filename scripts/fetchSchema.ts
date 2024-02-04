@@ -31,7 +31,9 @@ const main = async () => {
     const result = await getSwaggerSchema(version);
     const swaggerFilename = path.join(tempDir, `swagger-${version}.json`);
     const openapiFilename = path.join(outputDir, `openapi-${version}.json`);
-    fs.writeFileSync(swaggerFilename, JSON.stringify(result, null, 2), { encoding: "utf-8" });
+    fs.writeFileSync(swaggerFilename, JSON.stringify(result, null, 2), {
+      encoding: "utf-8",
+    });
     await convert(swaggerFilename, openapiFilename);
   });
   await Promise.all(tasks);
