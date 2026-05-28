@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { rimraf } from "rimraf";
-import { outputDir, versions, sourceOutputDir } from "./config";
+import { outputDir, versions, sourceOutputDir } from "./config.ts";
 
 import { CodeGenerator, Option } from "@himenon/openapi-typescript-code-generator";
 import * as Templates from "@himenon/openapi-typescript-code-generator/dist/templates";

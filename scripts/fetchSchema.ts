@@ -3,7 +3,7 @@ import * as path from "path";
 import fetch from "node-fetch";
 import { execa } from "execa";
 import { rimraf } from "rimraf";
-import { versions, outputDir } from "./config";
+import { versions, outputDir } from "./config.ts";
 
 export const getSwaggerSchema = async (version: string): Promise<any> => {
   const url = `https://developer.atlassian.com/cloud/jira/platform/swagger-v3.${version}.json`;
