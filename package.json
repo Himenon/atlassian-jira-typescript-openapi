@@ -54,7 +54,7 @@
     "ts": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm"
   },
   "devDependencies": {
-    "@himenon/openapi-typescript-code-generator": "2.0.3",
+    "@himenon/openapi-typescript-code-generator": "2.0.6",
     "@swc/core": "^1.15.33",
     "@types/node": "25.7.0",
     "@typescript-eslint/eslint-plugin": "8.59.3",
