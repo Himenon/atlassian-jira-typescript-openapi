@@ -42,16 +42,16 @@
     "build": "tsup",
     "build:all": "run-s fetch:schemas generate:code",
     "clean": "rimraf dist",
-    "fetch:schemas": "pnpm ts ./scripts/fetchSchema.ts",
+    "fetch:schemas": "node --strip-types ./scripts/fetchSchema.ts",
     "lerna:version:up": "lerna version --yes",
-    "generate:code": "pnpm ts ./scripts/generateCode.ts",
+    "generate:code": "node --strip-types ./scripts/generateCode.ts",
     "release:github:registry": "pnpm publish --registry https://npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}",
     "release:npm:registry": "pnpm publish",
     "test": "run-s validate",
     "lint": "oxlint .",
     "format": "oxfmt",
-    "validate": "oxfmt --check",
-    "ts": "node --strip-types"
+    "type-check": "tsc --noEmit",
+    "validate": "oxfmt --check"
   },
   "devDependencies": {
     "@himenon/openapi-typescript-code-generator": "2.0.6",
