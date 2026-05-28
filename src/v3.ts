@@ -36848,7 +36848,10 @@ export class Client<RequestOption> {
    * operationId: getBulkScreenTabs
    * Request URI: /rest/api/3/screens/tabs
    */
-  public async getBulkScreenTabs(params: Params$getBulkScreenTabs, option?: RequestOption): Promise<void> {
+  public async getBulkScreenTabs(
+    params: Params$getBulkScreenTabs,
+    option?: RequestOption,
+  ): Promise<Response$getBulkScreenTabs$Status$200["application/json"]> {
     const url = this.baseUrl + `/rest/api/3/screens/tabs`;
     const headers = {
       Accept: "application/json",

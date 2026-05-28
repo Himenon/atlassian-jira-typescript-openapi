@@ -8,5 +8,4 @@ package-lock.json
 private_npm_cache
 .tmp*
 dist/
-api-spec/
 lefthook-local.yml
