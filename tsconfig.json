@@ -8,6 +8,8 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "ignoreDeprecations": "6.0",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedParameters": false,
     "skipLibCheck": true,
