@@ -1,0 +1,16 @@
+allowBuilds:
+  "@swc/core": true
+  esbuild: true
+  lefthook: true
+  nx: true
+
+minimumReleaseAge: 20160
+
+minimumReleaseAgeExclude:
+  - "@himenon/openapi-typescript-code-generator"
+
+onlyBuiltDependencies:
+  - "@swc/core"
+  - esbuild
+  - lefthook
+  - nx
