@@ -16033,7 +16033,9 @@ export interface Parameter$getBulkScreenTabs {
   /** The maximum number of items to return per page. The maximum number is 100, */
   maxResult?: number;
 }
-export interface Response$getBulkScreenTabs$Status$200 {}
+export interface Response$getBulkScreenTabs$Status$200 {
+  "application/json": {};
+}
 export interface Parameter$updateScreen {
   /** The ID of the screen. */
   screenId: number;
